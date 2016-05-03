@@ -1,0 +1,14 @@
+{
+    "name": "ben/doc",
+    "description": "blog php",
+    "authors": [
+        {
+            "name": "neb19",
+            "email": "b.neb.19@gmail.com"
+        }
+    ],
+    "require": {},
+    "psr-4" : {
+        "Doc\\" : "src"
+    }
+}
