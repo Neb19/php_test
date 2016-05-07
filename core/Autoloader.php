@@ -1,8 +1,5 @@
 <?php
 
-namespace Doc\Core;
-
-
 class Autoloader
 {
 
@@ -15,6 +12,8 @@ class Autoloader
     {
         $filename = explode('\\', $className);
         $filename = end($filename);
-        require $filename . '.php';
+        $filename = __DIR__ . DIRECTORY_SEPARATOR . $filename . '.php';
+        if( is_readable($filename) )
+            require "$filename";
     }
 }
