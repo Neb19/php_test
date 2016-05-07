@@ -1,7 +1,8 @@
 <?php
 
 use Doc\Core\MySQLDatabase;
-use Doc\View\AppView;
+use Doc\Core\Request;
+use Doc\Controller\AppController;
 
 // return $config
 require 'app/bootstrap.php';
@@ -14,8 +15,9 @@ require 'core/Autoloader.php';
 Autoloader::registerAutoload();
 
 // Database
-$db = new \Doc\Core\MySQLDatabase($config['Database']);
+$db = new MySQLDatabase($config['Database']);
 $db = $db->getPdo();
 
-// View
+$request = new Request();
 
+AppController::initialize($request);
